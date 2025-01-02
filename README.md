@@ -1,74 +1,6 @@
-# Track your resume in git
-
-Watch the video for a complete guide 👇
-
-[![git resume workflow](https://img.youtube.com/vi/W5pwShuW1yw/0.jpg)](https://www.youtube.com/watch?v=W5pwShuW1yw)
-
-I have been using git to track my resume and job applications for over 10 years, and I constantly make improvements to this workflow.
-Here is an example repo for how to track your resume with git.
-
-Here is my current goals:
-
-* Make it easy to modify and track resume changes
-* Keep application history
-* Make searching for relevant information easy
-
-This is an example repo with example data.
-This does not include my real resume or jobs I have applied for.
-Commit dates have been altered so you can see what a working example looks like over time.
-
-This may not be the best system for you depending on how much you use or like git.
-
-## Explore this repo
-
-You can explore this repo by cloning it and using `git` or visually from the network insights on GitHub.
-Other git tools may work, but may not present the data in a helpful way because this repo is not used like a typical code repo.
-
-This is a visualization with [GitVine](https://insanesharpness.gitlab.io/GitVine/)
-![image](https://github.com/rothgar/track-your-resume-in-git/assets/371796/474d6bef-5d05-4fec-bdc9-235aad660a7b)
-
-
-## How to track your resume in git
-
-Put your resume in git.
-This should include the .pdf you submitted and any files you used to generate that PDF.
-
-I always track the files with my full name so they are named the same thing.
-Naming consistency helps with tracking changes and switching branches.
-
-```
-ls
-
-Justin Garrison.md
-Justin Garrison.pdf
-```
-
-If you use a word doc, markdown, html, etc. it should be tracked.
-If you use a 3rd party tool to generate the PDF (e.g. https://ohmycv.app/) you should put that information in a readme.txt file.
-
-```
-cat readme.txt
-
-used: https://ohmycv.app
-```
-
-If you use CLI tools to generate the PDF (e.g. `laytex` or `pandoc`) you should create a Makefile or [justfile](https://github.com/casey/just) to generate the pdf.
-
-```
-cat justfile
-
-pdf
-    pandoc "Justin Garrison.md" -o "Justin Garrison.pdf"
-```
-
-This makes it easier to edit and generate the asset to submit to the job application.
-
-At minimum you should track the source file(s) and submitted resume.
-
-When you make changes to the resume without applying for a new job you can commit your changes with any commit message you want.
+# Track Palash's resume in git
 
 ## How to track applications
-
 I don't always customize my resume for each application, but I still want a way to track what jobs I applied for.
 This was hard to do for two reasons:
 
@@ -119,27 +51,3 @@ git commit -m "Apply: SRE job at cool-co"
 ```
 
 If I find more jobs at "Cool Co." I can re-use this resume with an updated jd.pdf file and add a new commit for the new role.
-
-## Optional things
-
-Some other things I've tried tracking and gave up on for various reasons.
-
-* Interviews
-* Job offers
-* Contacts/notes
-
-For a while I was tracking application status updates and interviews in my git repo.
-It was cool to see the timeline, but it became too much work to maintain.
-
-It was more work partially because the job I interviewed for wasn't always the job I applied for.
-Some companies also have many layers of interviews and I would forget to update the repo after a phone screen or after traveling for an in-person interview.
-
-Offers come via email or a phone call and usually have multiple documents (at least they do at big companies) and I didn't want to dump all that stuff in git.
-Health benefits, retirement, base pay, and other perks were never consistent and instead of keeping them in git I keep them in my note taking app.
-
-Contacts and names are handy to have, but I never found a consistent way to store them.
-Sometimes I would put them in git commit messages and sometimes I would put them in a contacts.txt file.
-
-Either way, I would track them but when I would eventually want to look them up again they usually didn't work at the company anymore.
-There have been people I've interviewed with at multiple companies and it was harder to track them as part of an application process.
-
